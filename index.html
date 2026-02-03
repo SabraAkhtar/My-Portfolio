@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hawa Jani | Web & Graphic Designer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#fafafa;
+  color:#222;
+  line-height:1.7;
+}
+
+a{text-decoration:none;color:inherit;}
+
+/* ===== Navbar ===== */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 30px rgba(0,0,0,0.06);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:700;
+  color:#ff6b4a;
+}
+
+nav ul{
+  display:flex;
+  gap:30px;
+}
+
+nav ul li{list-style:none;}
+
+nav ul li a{
+  font-weight:500;
+  position:relative;
+}
+
+nav ul li a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  left:0;
+  bottom:-6px;
+  background:#6c63ff;
+  transition:0.3s;
+}
+
+nav ul li a:hover::after{
+  width:100%;
+}
+
+/* ===== Hero ===== */
+.hero{
+  height:95vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#ff6b4a,#6c63ff);
+  color:#fff;
+  padding:0 20px;
+}
+
+.hero h1{
+  font-size:60px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:20px;
+  max-width:600px;
+  margin-bottom:40px;
+  opacity:0.95;
+}
+
+.hero a{
+  padding:14px 40px;
+  border-radius:40px;
+  background:#fff;
+  color:#6c63ff;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  transition:0.3s;
+}
+
+.hero a:hover{
+  background:transparent;
+  color:#fff;
+  border:2px solid #fff;
+}
+
+/* ===== About ===== */
+.about{
+  display:flex;
+  gap:60px;
+  padding:100px 60px;
+  align-items:center;
+  background:#fff;
+}
+
+.about img{
+  width:320px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(108,99,255,0.25);
+}
+
+.about-text h2{
+  font-size:36px;
+  margin-bottom:20px;
+  color:#6c63ff;
+}
+
+.about-text p{
+  color:#555;
+  max-width:600px;
+}
+
+/* ===== Skills ===== */
+.skills{
+  padding:100px 60px;
+  background:#f3f3ff;
+  text-align:center;
+}
+
+.skills h2{
+  font-size:36px;
+  margin-bottom:60px;
+  color:#6c63ff;
+}
+
+.skills-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:30px;
+}
+
+.skill{
+  background:#fff;
+  padding:25px;
+  border-radius:18px;
+  font-weight:600;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  border-top:4px solid #ff6b4a;
+  transition:0.3s;
+}
+
+.skill:hover{
+  transform:translateY(-8px);
+  border-top:4px solid #6c63ff;
+}
+
+/* ===== Portfolio ===== */
+.portfolio{
+  padding:100px 60px;
+  background:#fff;
+  text-align:center;
+}
+
+.portfolio h2{
+  font-size:36px;
+  margin-bottom:60px;
+  color:#ff6b4a;
+}
+
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.portfolio-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+.portfolio-item img{
+  width:100%;
+  transition:0.4s;
+}
+
+.portfolio-item:hover img{
+  transform:scale(1.12);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(108,99,255,0.7),rgba(255,107,74,0.3));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:600;
+  opacity:0;
+  transition:0.4s;
+}
+
+.portfolio-item:hover .overlay{
+  opacity:1;
+}
+
+/* ===== Social ===== */
+.social{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.social a{
+  margin:0 20px;
+  font-size:18px;
+  font-weight:600;
+  color:#6c63ff;
+}
+
+.social a:hover{
+  color:#ff6b4a;
+}
+
+/* ===== Contact ===== */
+.contact{
+  padding:100px 40px;
+  background:#f3f3ff;
+  text-align:center;
+}
+
+.contact h2{
+  font-size:36px;
+  margin-bottom:25px;
+  color:#6c63ff;
+}
+
+.contact p{
+  color:#555;
+}
+
+/* ===== Footer ===== */
+footer{
+  padding:25px;
+  background:#111;
+  color:#bbb;
+  text-align:center;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  nav{padding:15px 25px;}
+  .hero h1{font-size:40px;}
+  .about{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Hawa Jani</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#social">Social</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Sabra Akhtar</h1>
+  <p>Designing Modern Web & Visual Experiences</p>
+  <a href="#portfolio">View My Work</a>
+</section>
+
+<section class="about" id="about">
+  <img src="sabra.png">
+  <div class="about-text">
+    <h2>About Me</h2>
+    <p>
+      Hi! I'm Hawa Jani, a passionate Web and Graphic Designer with a flair for creating visually stunning websites, UI/UX designs, and graphic content. I love blending creativity with functionality to deliver projects that not only look beautiful but also provide seamless user experiences. With a keen eye for detail and a love for modern design trends, I strive to bring every idea to life in a way that resonates with audiences and makes a lasting impression.
+    </p>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <h2>My Skills</h2>
+  <div class="skills-list">
+    <div class="skill">HTML & CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Photoshop</div>
+    <div class="skill">Illustrator</div>
+    <div class="skill">Figma / UI UX</div>
+    <div class="skill">Web Design</div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <img src="youtube.webp">
+      <div class="overlay">View Project</div>
+    </div>
+    <div class="portfolio-item">
+      <img src="images (2).jfif">
+      <div class="overlay">View Project</div>
+    </div>
+    <div class="portfolio-item">
+      <img src="portfolio.webp">
+      <div class="overlay">View Project</div>
+    </div>
+    <div class="portfolio-item">
+      <img src="new.jfif">
+      <div class="overlay">View Project</div>
+    </div>
+  </div>
+</section>
+
+<section class="social" id="social">
+  <a href="https://instagram.com/hawascloset1" target="_blank">Instagram</a>
+  <a href="https://tiktok.com/@hawavibes3" target="_blank">TikTok</a>
+  <a href="#">LinkedIn</a>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Me</h2>
+  <p>Email: hawajani@example.com</p>
+  <p>Let’s create something amazing ✨</p>
+</section>
+
+<footer>
+  © 2026 Hawa Jani. All Rights Reserved.
+</footer>
+
+</body>
+</html>
+
